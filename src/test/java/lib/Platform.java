@@ -49,7 +49,7 @@ public class Platform {
         capabilities.setCapability("platformName", "android");
         capabilities.setCapability("deviceName", "PixelAPI28");
         capabilities.setCapability("automationName", "Appium");
-        capabilities.setCapability("app", "/Users/elcentipede/IdeaProjects/appium_java_test/apks/org.wikipedia.apk");
+        capabilities.setCapability("app", System.getProperty("user.dir")+"/apks/org.wikipedia.apk");
         capabilities.setCapability("appActivity", ".main.MainActivity");
         capabilities.setCapability("appPackage", "org.wikipedia");
         return capabilities;
@@ -62,7 +62,7 @@ public class Platform {
         capabilities.setCapability("platformVersion", "11.2");
         capabilities.setCapability("platformName", "iOS");
         capabilities.setCapability("deviceName", "iPhone X");
-        capabilities.setCapability("app", "/Users/elcentipede/IdeaProjects/appium_java_test/apks/Wikipedia.app");
+        capabilities.setCapability("app", System.getProperty("user.dir")+"/apks/Wikipedia.app");
         return capabilities;
     }
 
