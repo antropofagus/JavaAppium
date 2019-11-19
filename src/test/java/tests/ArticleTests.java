@@ -23,7 +23,7 @@ public class ArticleTests extends CoreTestCase {
         SearchPageObject.initSearchInput();
         SearchPageObject.typeSearchString(search_string);
         SearchPageObject.waitForSearchResult(search_string);
-        SearchPageObject.clickByArticleWithSubstring("Object-oriented programming language");
+        SearchPageObject.clickByArticleWithSubstring("bject-oriented programming language");
 
         ArticlePageObject ArticlePageObject = ArticlePageObjectFactory.get(driver);
         ArticlePageObject.assertArticleTitlePresent();

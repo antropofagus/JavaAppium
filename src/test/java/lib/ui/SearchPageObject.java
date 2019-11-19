@@ -1,9 +1,14 @@
 package lib.ui;
 
 import io.appium.java_client.AppiumDriver;
+import lib.Platform;
+import org.openqa.selenium.JavascriptException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
 abstract public class SearchPageObject extends MainPageObject {
     protected static String
@@ -20,7 +25,7 @@ abstract public class SearchPageObject extends MainPageObject {
 
 
 
-    public SearchPageObject(AppiumDriver driver) {
+    public SearchPageObject(RemoteWebDriver driver) {
         super(driver);
     }
 
@@ -34,7 +39,7 @@ abstract public class SearchPageObject extends MainPageObject {
         this.waitForElementAndClick(
                 SEARCH_INIT_ELEMENT,
                 "Can`t find 'Search Wikipedia' input",
-                5);
+                10);
         this.waitForElementPresent(
                 SEARCH_INPUT,
                 "Can`t find search input",
@@ -46,7 +51,7 @@ abstract public class SearchPageObject extends MainPageObject {
                 SEARCH_INPUT,
                 "Can`t find and type into search input",
                 search_string,
-                5 );
+                10 );
     }
 
     public void waitForSearchResult(String search_string) {
@@ -134,4 +139,5 @@ abstract public class SearchPageObject extends MainPageObject {
         List<WebElement> searchResultsList = this.getListOfElements(SEARCH_RESULTS_LIST_ITEM);
         return searchResultsList;
     }
+
 }

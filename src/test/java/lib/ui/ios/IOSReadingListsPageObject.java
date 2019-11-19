@@ -1,13 +1,13 @@
-package lib.ui.IOS;
+package lib.ui.ios;
 
-import io.appium.java_client.AppiumDriver;
 import lib.ui.ReadingListsPageObject;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class IOSReadingListsPageObject extends ReadingListsPageObject {
     static {
         ARTICLE_BY_TITLE_TPL = "xpath://XCUIElementTypeLink[contains(@name,'{TITLE}')]";
     }
-    public IOSReadingListsPageObject(AppiumDriver driver) {
+    public IOSReadingListsPageObject(RemoteWebDriver driver) {
         super(driver);
     }
 }
